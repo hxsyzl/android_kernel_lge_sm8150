@@ -29,7 +29,7 @@ jobs:
         if: steps.cache-build-env.outputs.cache-hit != 'true'
         run: |
           wget -q "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz" -O "llvm.tar.xz"
-          mkdir clang && tar -xJf llvm.tar.xz -C clang --strip-components=1 && rm -rf llvm.tar.xz
+          mkdir clang && tar -xJf llvm.tar.xz -C clang && rm -rf llvm.tar.xz
           
       - name: Save Android toolchain
         if: steps.cache-build-env.outputs.cache-hit != 'true'
